@@ -871,7 +871,7 @@ class googleimagesdownload:
                 break
             #code added here to attempt to implement offset correctly
             #was "count < int(arguments['offset'])" in hardikvasa code, this seems
-            # to be contrary to the implementation details. 
+            # to be contrary to the implementation details.
             elif arguments['offset'] and count <= int(arguments['offset']):
                     count += 1
                     #page = page[end_content:]
@@ -1116,7 +1116,7 @@ class googleimagesdownload:
                                 images, _ = self.download_page(value)  # download page
                             else:
                                 images, _ = self.download_extended_page(value, arguments['chromedriver'])
-                            self.create_directories(main_directory, final_search_term, arguments['thumbnail'],
+                            self.create_directories(main_directory, final_search_term.replace("/", "_"), arguments['thumbnail'],
                                                     arguments['thumbnail_only'])
                             self._get_all_items(images, main_directory, search_term + " - " + key, limit, arguments)
 
